@@ -2,19 +2,25 @@
     padding: 0.4rem;
     margin: 0;
     box-sizing: border-box;
+    max-width: 100vw;
 }
-/* body{
-    background-color: black;
-} */
+
+:root{
+    --content-color: rgb(87, 87, 87);
+    --main-font: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    --footer-color: #009FBD;
+}
+
+body{
+    padding-left: 10rem;
+    padding-right: 10rem;
+}
 
  /* Navigation Bar's Code */ 
 .nav_bar{
-    margin: 0 auto; 
-    max-width: 1200px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* border: 2px solid black; */
 } 
 
 .logo_and_name{
@@ -65,14 +71,13 @@
     height: 2.3rem;
     width: 2rem;
 }
-/* Main Section's Code */
 
+/* Main Section's Code */
 .hero_section{
     display: flex;
-    max-width: 1000px;
+    justify-content: center;
+    align-items: center;
     gap: 2rem;
-    margin: 0 auto;
-    /* border: 2px solid black; */
 }
 
 .left_side{
@@ -165,23 +170,29 @@
     animation: slideFromRight 1.5s backwards 1s ;
 }
 
-#our_partners{
-    animation: bigIn 2.5s 1s ease-in-out forwards;
-}
-
+/* Our Partners */
 .partners_list{
     display: grid;
-    grid-template-rows: repeat(1,1fr);
+    flex-direction: row;
+    grid-template-rows: repeat(2,1fr);
     grid-template-columns: repeat(4,1fr);
-    /* border: 1px solid black; */
-    max-width: 850px;
-    margin: 0 auto;
     gap: 2rem;
+}
+
+.our_partners{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: var(--content-color);
+    font-family: var(--main-font);
+    opacity: 0;
+    animation: bigIn 2.5s 1s ease-in-out forwards;
 }
 
 .trusted_partner{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
 }
 
@@ -194,7 +205,6 @@
 
 .img_text{
     font-size: 1.7rem;
-    /* border: 1px solid black; */
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: rgb(77, 81, 109);
     opacity: 0;
@@ -213,12 +223,22 @@
 }
 
 /* Our Advantages */
+.advantages_section{
+    display: grid;
+    grid-template-rows: repeat(3,1fr);
+    grid-template-columns: repeat(2,1fr);
+    place-items: center;
+    place-content: center;
+    gap: 1.3rem;
+    margin: 0.001rem;
+}
+
 .advatanges_intro{
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    font-family: Georgia, Times, "Times New Roman", serif;
     font-weight: 520;
     font-size: 1.5rem;
     color: rgb(136, 44, 223);
@@ -226,6 +246,7 @@
     font-weight: 570;
     animation: 2s ease-in-out 3s slideIn forwards;
     opacity: 0;
+    margin: 0;
 }
 
 @keyframes slideIn{
@@ -238,24 +259,15 @@
         transform: translateX(0%);
     }
 }
-.advantages_section{
-    margin: 0 auto;
-    display: grid;
-    row-gap: 2.3rem;
-    grid-template-columns: repeat(2,0.5fr);
-    grid-template-rows: repeat(3,0.3fr);
-    max-width: 700px;
-}
 
 .our_advantages{
     display: flex;
-    row-gap: 1.5rem;
+    row-gap: 0.1rem;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 20rem;
     width: 15rem;
-    margin: 0 auto;
     border: none;
     border-radius: 2rem;
     box-shadow: -0.8rem -0.8rem 1rem 0.0001rem grey;
@@ -319,7 +331,7 @@
     background-color: #C21292;
 }
 
-#practical_experience{
+#practical_experience{  
     background-color: #872341;
 }
 
@@ -331,20 +343,7 @@
     background-color: #090580;
 }
 
-.testimonial_intro , .our_partners , .copyright_section{
-    display: flex;
-    padding: 1rem;
-    justify-content: center;
-    align-items: center;
-    color: #727272;
-    font-size: 3rem;
-    font-family: Arial, Helvetica, sans-serif;
-    max-width: 1200px;
-    margin: 0 auto;
-    animation: bigIn 2.5s 10s ease-in-out forwards;
-    opacity: 0;
-}
-
+/* Testimonials section */
 @keyframes bigIn {
     0%{
         opacity: 0;
@@ -354,24 +353,33 @@
     }
     100%{
         opacity: 1;
-        transform: perspective(100rem) translateZ(20rem);
+        transform: perspective(125rem) translateZ(27rem);
     }
 }
 
-.testimonial_intro:hover{
-    transform: perspective(100rem) translateZ(30rem);
+.testimonial_intro{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--content-color);
+    margin: 10rem;
+    animation: bigIn 1.5s 9s ease-in-out forwards;
+    opacity: 0;
 }
 
 .testimonials_section{
-    margin: 0 auto;
-    max-width: 1100px;
     display: grid;
-    grid-template-rows: repeat(auto);
-    grid-template-columns: repeat(auto-fill, minmax(350px,1fr));
+    grid-template-rows: repeat(2,1fr);
+    grid-template-columns: repeat(3,1fr);
+    color: #727272;
+    font-size: 1rem;
+    font-family: Arial, Helvetica, sans-serif;
+    animation: bigIn 2.5s 10s ease-in-out forwards;
+    opacity: 0;
 }
 
 .testimonials{
-    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -441,11 +449,9 @@ font-weight: 547;
 
 /* Newsletter section */
 .newsletter_section{
-    margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 1000px;
     opacity: 0;
     animation: comeDown 2s 15s ease-in-out forwards;
 }
@@ -594,6 +600,12 @@ input[type="mail"]::placeholder{
 }
 /* To make the webpage responsive */
 @media screen and (max-width:770px) {
+
+    body{
+        padding-left: 5rem;
+        padding-right: 5rem;
+    }
+
     .contact_button{
         display: none;
     }
@@ -624,8 +636,20 @@ input[type="mail"]::placeholder{
 
     .partners_list{
         display: grid;
-        grid-template-rows: repeat(2,1fr);
-        grid-template-columns: repeat(2,1fr);
+        flex-direction: column;
+        grid-template-rows: repeat(5,1fr);
+        grid-template-columns: repeat(1,1fr);
+    }
+
+    #our_partners{
+        grid-column: 1/4;
+    }
+
+    .trusted_partner{
+        grid-column: 1/2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .advantages_section{
@@ -656,7 +680,136 @@ input[type="mail"]::placeholder{
         grid-template-columns: repeat(1,1fr);
         grid-template-rows: repeat(5,1fr);
     }
+}
 
+@media screen and (max-width:400px){
+    body{
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    .contact_button{
+        display: none;
+    }
+
+    .nav_options{
+        display: none;
+    }
+
+    .menu_button{
+        display: grid;
+    }
+
+    .hero_section{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .left_side{
+        text-align: center;
+    }
+
+    .inside_buttons{
+        display: flex;
+        justify-content: center;
+    }
+
+    .partners_list{
+        display: grid;
+        flex-direction: column;
+        grid-template-rows: repeat(5,0.3fr);
+        grid-template-columns: repeat(1,fr);
+    }
+
+    .advantages_section{
+        display: grid;
+        flex-direction: column;
+        place-content: center;
+        place-items: center;
+        grid-template-rows: auto;
+        grid-template-columns: repeat(1,1fr);
+    }
+
+    .testimonials_section{
+        display: grid;
+        grid-template-rows: repeat(3,1fr);
+        grid-template-columns: repeat(1,1fr);
+        margin-bottom: 15rem;
+    }
+
+    .testimonial_intro{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 3.5rem;
+        margin: 17rem;
+        animation: slideFromLeft 2.5s 5s ease-in-out forwards;
+        opacity: 0;
+    }
+
+    @keyframes slideFromLeft {
+        0%{
+            opacity: 0;
+            transform: translateX(-100%);
+        }
+        100%{
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+    
+    .testimonials{
+        display: grid;
+        place-content: space-around;
+    }
+    .newsletter_section{
+        background-color: #bb9bff;
+        border-radius: 1rem;
+        overflow: auto;
+    }
+
+    .newsletter_img{
+        display: none;
+    }
+
+    .submit_mail{
+        display: flex;
+        flex-direction: column;
+        row-gap: 1.3rem;
+        justify-content: space-between;
+    }
+
+    .submit_mail_button{
+        font-size: 1.2rem;
+        padding: 1rem;
+        width: 7rem;
+    }
+
+    .terms_policy_notice{
+        color: #0f022c;
+    }
+
+    .terms_condition{
+        color: aquamarine;
+    }
+
+    .footer_section{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        grid-template-rows: repeat(5,1fr);
+    }
+
+    .copyright_section{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 0.9rem;
+        color: var(--footer-color);
+        animation: bigIn 3s 17s ease-in-out forwards;
+        opacity: 0;
+    }
 }
 
 
